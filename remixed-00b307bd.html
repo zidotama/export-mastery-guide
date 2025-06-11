@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Export Guide: Arang Briket Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section {
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .section-header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .section-header:hover {
+            background: linear-gradient(45deg, #34495e, #2c3e50);
+        }
+        
+        .section-header h2 {
+            font-size: 1.5em;
+            color: #f39c12;
+        }
+        
+        .section-content {
+            padding: 25px;
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .supplier-card {
+            background: rgba(46, 204, 113, 0.1);
+            border: 2px solid rgba(46, 204, 113, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .supplier-card:hover {
+            border-color: rgba(46, 204, 113, 0.6);
+            transform: translateY(-5px);
+        }
+        
+        .supplier-name {
+            font-size: 1.3em;
+            color: #2ecc71;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .supplier-info {
+            color: #ecf0f1;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .contact-info {
+            background: rgba(52, 152, 219, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .email-template {
+            background: rgba(155, 89, 182, 0.1);
+            border: 2px solid rgba(155, 89, 182, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .email-header {
+            background: rgba(155, 89, 182, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.2));
+            border: 2px solid rgba(231, 76, 60, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-type {
+            font-size: 1.2em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .price-range {
+            font-size: 2em;
+            color: #f39c12;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .price-details {
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+        
+        .legal-checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .legal-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .legal-item input[type="checkbox"] {
+            margin-right: 15px;
+            margin-top: 5px;
+            transform: scale(1.3);
+        }
+        
+        .legal-content {
+            flex: 1;
+        }
+        
+        .legal-title {
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+        
+        .legal-desc {
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+        
+        .copy-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+        }
+        
+        .calculation-tool {
+            background: rgba(241, 196, 15, 0.1);
+            border: 2px solid rgba(241, 196, 15, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 10px 0;
+            align-items: center;
+        }
+        
+        .calc-input {
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1em;
+        }
+        
+        .calc-result {
+            background: rgba(46, 204, 113, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+        
+        @media (max-width: 768px) {
+            .supplier-grid,
+            .pricing-table,
+            .legal-checklist {
+                grid-template-columns: 1fr;
+            }
+            
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .highlight {
+            background: rgba(241, 196, 15, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #f1c40f;
+        }
+        
+        .important-note {
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .success-note {
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid rgba(46, 204, 113, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Complete Export Mastery Guide</h1>
+            <p>Supplier Mapping • Email Templates • Pricing Strategy • Legal Documentation</p>
+        </div>
+        
+        <!-- SUPPLIER MAPPING SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('suppliers')">
+                <h2>🏭 Supplier Mapping Kalimantan</h2>
+                <span class="toggle-icon" id="suppliers-icon">▼</span>
+            </div>
+            <div class="section-content" id="suppliers-content">
+                <div class="important-note">
+                    <strong>Strategy:</strong> Mulai dengan 2-3 supplier untuk diversifikasi risiko. Pilih yang sudah berpengalaman ekspor dan punya sertifikat lengkap.
+                </div>
+                
+                <div class="supplier-grid">
+                    <div class="supplier-card">
+                        <div class="supplier-name">🌟 PT Berkat Karbon Indonesia (BERKARINDO)</div>
+                        <div class="supplier-info">
+                            <strong>Speciality:</strong> 100% Coconut shell briquettes<br>
+                            <strong>Kapasitas:</strong> High volume production<br>
+                            <strong>Keunggulan:</strong> Pollution-free, eco-friendly<br>
+                            <strong>Experience:</strong> Established exporter<br>
+                            <strong>Standards:</strong> International quality control
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> berkarindo.com<br>
+                            <strong>Status:</strong> Ready for OEM/Contract Manufacturing
+                        </div>
+                    </div>
+                    
+                    <div class="supplier-card">
+                        <div class="supplier-name">🔥 Glowing Charcoal Indonesia (PT Bara Coco Agronesia)</div>
+                        <div class="supplier-info">
+                            <strong>Speciality:</strong> Shisha & BBQ briquettes<br>
+                            <strong>Established:</strong> Since 2016<br>
+                            <strong>MOQ:</strong> 17 tons minimum<br>
+                            <strong>Location:</strong> Accessible dari Balikpapan<br>
+                            <strong>Certificates:</strong> Complete documentation
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> glowingcharcoal.com<br>
+                            <strong>Advantage:</strong> Flexible packaging & branding
+                        </div>
+                    </div>
+                    
+                    <div class="supplier-card">
+                        <div class="supplier-name">⭐ PT Coco Total Karbon Indonesia</div>
+                        <div class="supplier-info">
+                            <strong>Owner:</strong> Henry Gosalim<br>
+                            <strong>Speciality:</strong> Premium hookah coals<br>
+                            <strong>Service:</strong> Private label manufacturing<br>
+                            <strong>Security:</strong> NDA available<br>
+                            <strong>Quality:</strong> 100% natural coconut shell
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> charcoal.pro<br>
+                            <strong>MOQ:</strong> 18 tons (1 container)
+                        </div>
+                    </div>
+                    
+                    <div class="supplier-card">
+                        <div class="supplier-name">🚢 Charcoal Experience Indonesia</div>
+                        <div class="supplier-info">
+                            <strong>Service:</strong> Complete OEM solutions<br>
+                            <strong>Speciality:</strong> Global trade experience<br>
+                            <strong>Advantage:</strong> End-to-end service<br>
+                            <strong>Products:</strong> Wood & coconut briquettes<br>
+                            <strong>Support:</strong> Labeling & packaging
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> charcoalexperience.com<br>
+                            <strong>Position:</strong> #1 Global supplier claim
+                        </div>
+                    </div>
+                    
+                    <div class="supplier-card">
+                        <div class="supplier-name">🌿 PT Ruby Privatindo</div>
+                        <div class="supplier-info">
+                            <strong>Quality:</strong> Smokeless, odorless, sparkless<br>
+                            <strong>Performance:</strong> High heat, long burn<br>
+                            <strong>Result:</strong> White ash, high strength<br>
+                            <strong>Raw Material:</strong> Premium coconut shell<br>
+                            <strong>Market:</strong> Export-oriented
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> rubycoconutcharcoal.com<br>
+                            <strong>Established:</strong> Experienced manufacturer
+                        </div>
+                    </div>
+                    
+                    <div class="supplier-card">
+                        <div class="supplier-name">🎯 CV Djavacoal Indonesia</div>
+                        <div class="supplier-info">
+                            <strong>Products:</strong> Coconut, BBQ, Sawdust, Hardwood<br>
+                            <strong>Range:</strong> Multiple product lines<br>
+                            <strong>Focus:</strong> Premium quality export<br>
+                            <strong>Service:</strong> Complete briquette solutions<br>
+                            <strong>Innovation:</strong> Committed to R&D
+                        </div>
+                        <div class="contact-info">
+                            <strong>Website:</strong> djavacoal.com<br>
+                            <strong>Advantage:</strong> Diversified product portfolio
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-note">
+                    <strong>Action Plan:</strong><br>
+                    1. Contact 3 supplier teratas via website<br>
+                    2. Request sample + COA (Certificate of Analysis)<br>
+                    3. Visit factory untuk quality audit<br>
+                    4. Negotiate contract manufacturing terms<br>
+                    5. Setup quality control protocols
+                </div>
+            </div>
+        </div>
+        
+        <!-- EMAIL TEMPLATES SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('emails')">
+                <h2>📧 International Buyer Email Templates</h2>
+                <span class="toggle-icon" id="emails-icon">▼</span>
+            </div>
+            <div class="section-content" id="emails-content">
+                
+                <h3>📬 Template 1: Initial Inquiry to European Buyers</h3>
+                <div class="email-template">
+                    <div class="email-header">Subject: Premium Indonesian Coconut Charcoal Briquettes - Direct Manufacturer</div>
+                    
+Dear [Buyer Name],
+
+I hope this email finds you well. My name is [Your Name], and I represent [Your Company Name], a specialized exporter of premium coconut charcoal briquettes from Indonesia.
+
+<span class="highlight">Why Indonesian Coconut Briquettes?</span>
+• 100% natural coconut shell - no chemicals
+• 4+ hours burning time
+• Smokeless, odorless, and sparkless
+• Low ash content (<3%)
+• High calorific value (7500+ kcal/kg)
+• Sustainable and eco-friendly
+
+<span class="highlight">Our Advantages:</span>
+• Factory direct pricing
+• Flexible MOQ (starting 18 tons/1 container)
+• Private label & custom packaging available
+• Complete certifications (Phytosanitary, COO, Lab Analysis)
+• Port: Balikpapan/Tanjung Priok - Fast shipping to Europe
+
+<span class="highlight">Product Range:</span>
+1. BBQ Briquettes (Cube/Pillow/Hexagonal)
+2. Shisha Charcoal (Flat/Cube - 25x25mm, 22x22mm)
+3. Restaurant Grade (Premium long-burn)
+
+Would you be interested in receiving our detailed product catalog and competitive pricing? We're currently offering special rates for new European partners.
+
+I can arrange sample shipment (5kg) for your quality testing at no cost.
+
+Looking forward to building a long-term partnership.
+
+Best regards,
+[Your Name]
+[Your Title]
+[Company Name]
+WhatsApp: +62-xxx-xxxx-xxxx
+Email: [your-email]
+Website: [your-website]
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Template</button>
+                </div>
+                
+                <h3>📬 Template 2: Follow-up Email with Pricing</h3>
+                <div class="email-template">
+                    <div class="email-header">Subject: Re: Premium Coconut Briquettes - Competitive Pricing & Specifications</div>
+                    
+Dear [Buyer Name],
+
+Thank you for your interest in our coconut charcoal briquettes. As requested, please find our competitive pricing and detailed specifications below:
+
+<span class="highlight">PRICING (FOB Indonesian Port):</span>
+
+🔥 SHISHA COCONUT BRIQUETTES:
+• Cube 25x25x15mm: USD 420-480/MT
+• Flat 40x40x15mm: USD 400-460/MT
+• Custom sizes: USD 430-490/MT
+
+🍖 BBQ COCONUT BRIQUETTES:
+• Hexagonal: USD 380-440/MT
+• Pillow shape: USD 370-430/MT
+• Cube 5x5cm: USD 390-450/MT
+
+<span class="highlight">SPECIFICATIONS:</span>
+• Moisture Content: < 6%
+• Ash Content: < 3%
+• Volatile Matter: < 15%
+• Fixed Carbon: > 75%
+• Calorific Value: 7500+ kcal/kg
+• Burning Time: 4+ hours
+
+<span class="highlight">PACKAGING OPTIONS:</span>
+• 20kg plastic bags in master carton
+• 10kg retail boxes with your branding
+• Custom packaging as per requirement
+
+<span class="highlight">PAYMENT TERMS:</span>
+• New buyers: 30% T/T advance, 70% against B/L copy
+• LC at sight accepted
+• Long-term partners: Better payment terms available
+
+<span class="highlight">DELIVERY:</span>
+• Production time: 15-20 days after deposit
+• Shipping: 25-30 days to European ports
+• Container loading: 18-20 MT per 20ft container
+
+Would you like to proceed with a trial order? We recommend starting with 1 container to test market response.
+
+Free samples available - just cover courier cost.
+
+Best regards,
+[Your Name]
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Template</button>
+                </div>
+                
+                <h3>📬 Template 3: UAE/Middle East Market</h3>
+                <div class="email-template">
+                    <div class="email-header">Subject: Premium Shisha Charcoal from Indonesia - Halal Certified</div>
+                    
+Assalamu Alaikum / Greetings,
+
+I hope this message finds you in good health. I am [Your Name] from [Company Name], Indonesia's trusted supplier of premium coconut charcoal specifically for the Middle Eastern market.
+
+<span class="highlight">Why Choose Our Shisha Charcoal:</span>
+• 100% Halal certified coconut shell
+• No chemical additives or artificial binding agents
+• Perfect for traditional and modern shisha
+• Consistent quality batch after batch
+• Competitive pricing with reliable supply
+
+<span class="highlight">Popular Sizes for UAE Market:</span>
+• 25x25x15mm cubes (most popular)
+• 22x22x15mm cubes (premium cafes)
+• Custom sizes available
+
+<span class="highlight">Special Advantages for UAE:</span>
+• Fast shipping (14-18 days to Jebel Ali)
+• Dubai office support (planned)
+• Flexible payment terms
+• Free zone compatible documentation
+
+<span class="highlight">Current Pricing (FOB Indonesia):</span>
+• Premium cubes: USD 450-500/MT
+• Volume discount available for 5+ containers
+• Special rates for annual contracts
+
+We understand the importance of consistent quality in your market. Our factory maintains strict quality control with batch testing for every shipment.
+
+Would you like to receive samples for your evaluation? We can arrange 5kg sample delivery to your Dubai office.
+
+I'm available on WhatsApp for immediate response: +62-xxx-xxxx-xxxx
+
+Looking forward to serving the UAE market through your esteemed company.
+
+Best regards,
+[Your Name]
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Template</button>
+                </div>
+                
+                <h3>📬 Template 4: Japan Premium Market</h3>
+                <div class="email-template">
+                    <div class="email-header">Subject: 高品質ココナッツ炭 - Premium Indonesian Coconut Charcoal for Japanese Market</div>
+                    
+Dear [Buyer Name]-san,
+
+Greetings from Indonesia. I am [Your Name], representing [Company Name], specializing in premium coconut charcoal briquettes for the discerning Japanese market.
+
+<span class="highlight">Understanding Japanese Quality Standards:</span>
+We recognize Japan's exceptionally high standards for BBQ charcoal. Our products are specifically processed to meet Japanese preferences:
+
+• Ultra-low ash content (< 2.5%)
+• Extended burning time (5+ hours)
+• Consistent heat distribution
+• No sparking or popping sounds
+• Minimal smoke production
+• Natural coconut aroma
+
+<span class="highlight">Japanese Market Specifications:</span>
+• Size: Custom cut for Japanese BBQ grills
+• Moisture: < 5% (suitable for humid conditions)
+• Packaging: Moisture-proof with Japanese labeling
+• Quality control: Batch testing with certificates
+
+<span class="highlight">Pricing Structure (FOB Indonesia):</span>
+• Premium grade: USD 520-580/MT
+• Restaurant grade: USD 480-540/MT
+• Volume discounts for quarterly orders
+
+<span class="highlight">Why Partner with Us:</span>
+• Dedicated quality control for Japanese standards
+• Flexible packaging solutions
+• Reliable supply chain
+• English/Basic Japanese communication support
+
+We would be honored to supply the Japanese market through your company. May we send you samples for evaluation?
+
+Our commitment is to provide consistent quality that meets your customers' expectations.
+
+Please let me know if you would like to discuss further.
+
+Respectfully,
+[Your Name]
+[Company Details]
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Template</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PRICING STRATEGY SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('pricing')">
+                <h2>💰 Detailed Pricing Strategy</h2>
+                <span class="toggle-icon" id="pricing-icon">▼</span>
+            </div>
+            <div class="section-content" id="pricing-content">
+                
+                <div class="important-note">
+                    <strong>Market Research Finding:</strong> <span class="highlight">Indonesian coconut briquettes command premium prices - $300-580/MT FOB</span> depending on quality and destination market.
+                </div>
+                
+                <div class="pricing-table">
+                    <div class="price-card">
+                        <div class="product-type">🔥 Shisha Coconut Briquettes</div>
+                        <div class="price-range">$420-500</div>
+                        <div class="price-details">
+                            per MT (FOB Indonesia)<br>
+                            <strong>Target Markets:</strong> UAE, Germany, Netherlands<br>
+                            <strong>Sizes:</strong> 25x25mm, 22x22mm cubes<br>
+                            <strong>Margin:</strong> 35-45% gross profit<br>
+                            <strong>Volume:</strong> High demand, stable orders
+                        </div>
+                    </div>
+                    
+                    <div class="price-card">
+                        <div class="product-type">🍖 BBQ Coconut Briquettes</div>
+                        <div class="price-range">$370-450</div>
+                        <div class="price-details">
+                            per MT (FOB Indonesia)<br>
+                            <strong>Target Markets:</strong> Europe, Japan<br>
+                            <strong>Shapes:</strong> Hexagonal, Pillow, Cube<br>
+                            <strong>Margin:</strong> 30-40% gross profit<br>
+                            <strong>Season:</strong> Peak Apr-Sep (BBQ season)
+                        </div>
+                    </div>
+                    
+                    <div class="price-card">
+                        <div class="product-type">🌿 Sawdust Briquettes</div>
+                        <div class="price-range">$200-350</div>
+                        <div class="price-details">
+                            per MT (FOB Indonesia)<br>
+                            <strong>Target Markets:</strong> Price-sensitive buyers<br>
+                            <strong>Application:</strong> Industrial heating<br>
+                            <strong>Margin:</strong> 25-35% gross profit<br>
+                            <strong>Volume:</strong> Large orders, lower margin
+                        </div>
+                    </div>
+                    
+                    <div class="price-card">
+                        <div class="product-type">⭐ Premium Japan Grade</div>
+                        <div class="price-range">$520-580</div>
+                        <div class="price-details">
+                            per MT (FOB Indonesia)<br>
+                            <strong>Target Market:</strong> Japan premium BBQ<br>
+                            <strong>Quality:</strong> Ultra-low ash, long burn<br>
+                            <strong>Margin:</strong> 45-55% gross profit<br>
+                            <strong>Requirements:</strong> Strict quality control
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculation-tool">
+                    <h3>💡 Profit Calculator Tool</h3>
+                    <div class="calc-row">
+                        <label>Selling Price (USD/MT):</label>
+                        <input type="number" id="sellPrice" class="calc-input" value="450" onchange="calculateProfit()">
+                        <span>FOB Price</span>
+                    </div>
+                    <div class="calc-row">
+                        <label>Production Cost (USD/MT):</label>
+                        <input type="number" id="prodCost" class="calc-input" value="280" onchange="calculateProfit()">
+                        <span>Ex-factory cost</span>
+                    </div>
+                    <div class="calc-row">
+                        <label>Export Costs (USD/MT):</label>
+                        <input type="number" id="exportCost" class="calc-input" value="50" onchange="calculateProfit()">
+                        <span>Documentation + logistics</span>
+                    </div>
+                    <div class="calc-row">
+                        <label>Container Size (MT):</label>
+                        <input type="number" id="containerSize" class="calc-input" value="20" onchange="calculateProfit()">
+                        <span>Typically 18-20 MT</span>
+                    </div>
+                    <div class="calc-result" id="profitResult">
+                        Profit per Container: $2,400 (26.7% margin)
+                    </div>
+                </div>
+                
+                <div class="success-note">
+                    <h4>📈 Pricing Strategy Recommendations:</h4>
+                    <strong>1. Market Penetration Phase (Month 1-3):</strong><br>
+                    • Price 5-10% below market average untuk gain market share<br>
+                    • Focus on quality consistency untuk build reputation<br><br>
+                    
+                    <strong>2. Growth Phase (Month 4-8):</strong><br>
+                    • Gradually increase price to market average<br>
+                    • Introduce premium product lines<br><br>
+                    
+                    <strong>3. Premium Positioning (Month 9+):</strong><br>
+                    • Premium pricing untuk loyal customers<br>
+                    • Value-added services (custom packaging, branding)<br><br>
+                    
+                    <strong>4. Payment Terms Strategy:</strong><br>
+                    • New buyers: 30% advance, 70% against docs<br>
+                    • Regular buyers (3+ orders): 20% advance, 80% against docs<br>
+                    • VIP buyers (10+ orders): LC 30 days atau consignment basis<br><br>
+                    
+                    <strong>5. Seasonal Pricing:</strong><br>
+                    • BBQ season (Apr-Sep): Premium pricing +10-15%<br>
+                    • Off-season (Oct-Mar): Competitive pricing untuk maintain volume
+                </div>
+            </div>
+        </div>
+        
+        <!-- LEGAL DOCUMENTATION SECTION -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('legal')">
+                <h2>📋 Legal Documentation Checklist</h2>
+                <span class="toggle-icon" id="legal-icon">▼</span>
+            </div>
+            <div class="section-content" id="legal-content">
+                
+                <div class="important-note">
+                    <strong>Critical:</strong> Semua dokumen harus ready sebelum first export. Satu dokumen missing bisa tahan shipment di customs!
+                </div>
+                
+                <h3>🏢 Company Legal Setup</h3>
+                <div class="legal-checklist">
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal1">
+                        <div class="legal-content">
+                            <div class="legal-title">CV/PT Registration</div>
+                            <div class="legal-desc">Akta pendirian dari notaris + pengesahan Kemenkumham. Pilih PT untuk kredibilitas international.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal2">
+                        <div class="legal-content">
+                            <div class="legal-title">NPWP (Tax Number)</div>
+                            <div class="legal-desc">Nomor Pokok Wajib Pajak untuk perusahaan. Wajib untuk semua transaksi export.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal3">
+                        <div class="legal-content">
+                            <div class="legal-title">NIB (Nomor Induk Berusaha)</div>
+                            <div class="legal-desc">One-stop business permit via OSS system. Include SIUP, TDP, dan API sekaligus.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal4">
+                        <div class="legal-content">
+                            <div class="legal-title">API (Angka Pengenal Importir)</div>
+                            <div class="legal-desc">Export-Import identification number. Essential untuk customs clearance.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>📄 Export Documentation</h3>
+                <div class="legal-checklist">
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal5">
+                        <div class="legal-content">
+                            <div class="legal-title">Commercial Invoice</div>
+                            <div class="legal-desc">Faktur perdagangan internasional. Must include: HS Code 4402.90, FOB value, payment terms.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal6">
+                        <div class="legal-content">
+                            <div class="legal-title">Packing List</div>
+                            <div class="legal-desc">Detail isi container: jumlah karton, net/gross weight, container number, seal number.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal7">
+                        <div class="legal-content">
+                            <div class="legal-title">Bill of Lading (B/L)</div>
+                            <div class="legal-desc">Dokumen pengangkutan dari shipping line. Pilih "Freight Prepaid" untuk FOB terms.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal8">
+                        <div class="legal-content">
+                            <div class="legal-title">Certificate of Origin (COO)</div>
+                            <div class="legal-desc">Surat keterangan asal barang dari Kadin/Disperindag. Wajib untuk preferential tariffs.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal9">
+                        <div class="legal-content">
+                            <div class="legal-title">Phytosanitary Certificate</div>
+                            <div class="legal-desc">Sertifikat kesehatan tanaman dari Karantina Pertanian. Wajib untuk produk dari bahan organik.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal10">
+                        <div class="legal-content">
+                            <div class="legal-title">Fumigation Certificate</div>
+                            <div class="legal-desc">Sertifikat fumigasi untuk wooden packaging/pallets. Required by most countries.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>🔬 Quality & Compliance Certificates</h3>
+                <div class="legal-checklist">
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal11">
+                        <div class="legal-content">
+                            <div class="legal-title">Lab Analysis Report</div>
+                            <div class="legal-desc">Test report: moisture, ash content, calorific value, volatile matter. From accredited lab.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal12">
+                        <div class="legal-content">
+                            <div class="legal-title">MSDS (Material Safety Data Sheet)</div>
+                            <div class="legal-desc">Safety information for handling charcoal. Required for shipping and customs.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal13">
+                        <div class="legal-content">
+                            <div class="legal-title">ISO Certificates (Optional)</div>
+                            <div class="legal-desc">ISO 9001 (Quality), ISO 14001 (Environment). Adds credibility for premium buyers.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal14">
+                        <div class="legal-content">
+                            <div class="legal-title">Halal Certificate</div>
+                            <div class="legal-desc">For Middle East markets. From MUI (Indonesia) atau international Halal body.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>💼 Banking & Financial Documents</h3>
+                <div class="legal-checklist">
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal15">
+                        <div class="legal-content">
+                            <div class="legal-title">Corporate Bank Account</div>
+                            <div class="legal-desc">Multi-currency account. Recommended: BCA, Mandiri, atau BNI untuk export facilities.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal16">
+                        <div class="legal-content">
+                            <div class="legal-title">Export Credit Insurance</div>
+                            <div class="legal-desc">Asuransi kredit ekspor dari LPEI atau private insurance. Protects against buyer default.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <input type="checkbox" id="legal17">
+                        <div class="legal-content">
+                            <div class="legal-title">Letter of Credit Setup</div>
+                            <div class="legal-desc">Koordinasi dengan bank untuk LC handling. Training untuk export documentary procedures.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-note">
+                    <h4>⚡ Fast Track Legal Setup (7-10 days):</h4>
+                    <strong>Day 1-2:</strong> Submit PT registration + NIB online via OSS<br>
+                    <strong>Day 3-4:</strong> Bank account opening + NPWP registration<br>
+                    <strong>Day 5-6:</strong> API application + export permits<br>
+                    <strong>Day 7-8:</strong> Insurance setup + lab testing<br>
+                    <strong>Day 9-10:</strong> Document templates preparation<br><br>
+                    
+                    <strong>💡 Pro Tips:</strong><br>
+                    • Use notaris yang familiar dengan export company setup<br>
+                    • Apply NIB dan API bersamaan untuk efficiency<br>
+                    • Setup bank account di bank dengan export facility lengkap<br>
+                    • Prepare digital copies semua dokumen untuk quick access
+                </div>
+                
+                <div class="important-note">
+                    <h4>🚨 Common Mistakes to Avoid:</h4>
+                    • Jangan skip Phytosanitary Certificate - many shipments rejected<br>
+                    • HS Code harus exact: 4402.90.00 (tidak boleh salah)<br>
+                    • Invoice value harus match dengan actual transaction<br>
+                    • Container weight tidak boleh exceed 21-23 MT (depending on shipping line)<br>
+                    • Document expiry dates - COO valid 1 year, Phyto valid 14 days
+                </div>
+            </div>
+        </div>
+        
+        <!-- BONUS SECTION: CONTACT TEMPLATES -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('bonus')">
+                <h2>🎁 Bonus: WhatsApp & Social Media Templates</h2>
+                <span class="toggle-icon" id="bonus-icon">▼</span>
+            </div>
+            <div class="section-content" id="bonus-content">
+                
+                <h3>📱 WhatsApp Business Templates</h3>
+                <div class="email-template">
+                    <div class="email-header">Quick Intro Message</div>
+                    
+🔥 Hello! Greetings from Indonesia 🇮🇩
+
+I'm [Your Name] from [Company], premium coconut charcoal briquettes exporter.
+
+✅ 100% Natural coconut shell
+✅ 4+ hours burning time  
+✅ Smokeless & odorless
+✅ Direct factory pricing
+✅ MOQ: 18 tons (1 container)
+
+🌍 Currently supplying to Germany, UAE, Netherlands & Japan
+
+Interested in samples or pricing? 
+Reply "CATALOG" untuk product details 📋
+
+Best regards! 🙏
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy WhatsApp Template</button>
+                </div>
+                
+                <h3>📱 Instagram/LinkedIn Post Template</h3>
+                <div class="email-template">
+                    <div class="email-header">Social Media Content</div>
+                    
+🔥 FROM BALIKPAPAN TO THE WORLD 🌍
+
+Proud to announce our premium Indonesian coconut charcoal briquettes are now reaching international markets!
+
+🥥 Made from 100% natural coconut shells
+⏰ 4+ hours of consistent heat
+🌿 Eco-friendly & sustainable
+🚫 Zero chemicals, zero smoke
+
+Currently exporting to:
+🇩🇪 Germany | 🇳🇱 Netherlands  
+🇦🇪 UAE | 🇯🇵 Japan
+
+From traditional Indonesian coconut farms to your premium BBQ experience.
+
+#CoconutCharcoal #IndonesinExport #SustainableFuel #BBQLife #Balikpapan #MadeInIndonesia #ExportQuality
+
+📧 [your-email] | 📱 +62-xxx-xxxx-xxxx
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Social Media Post</button>
+                </div>
+                
+                <h3>📧 Signature Email Template</h3>
+                <div class="email-template">
+                    <div class="email-header">Professional Email Signature</div>
+                    
+[Your Name]
+Export Manager | [Company Name]
+🔥 Premium Indonesian Coconut Charcoal Briquettes
+
+📱 WhatsApp: +62-xxx-xxxx-xxxx
+📧 Email: [your-email]
+🌐 Website: [your-website]
+📍 Balikpapan, East Kalimantan, Indonesia
+
+🥥 100% Natural | 🌿 Eco-Friendly | 🌍 Export Quality
+"From Indonesian Coconut Farms to Global BBQ Excellence"
+
+                    <button class="copy-btn" onclick="copyToClipboard(this.parentElement)">📋 Copy Email Signature</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const icon = document.getElementById(sectionId + '-icon');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.classList.remove('rotated');
+                icon.textContent = '▼';
+            } else {
+                content.classList.add('active');
+                icon.classList.add('rotated');
+                icon.textContent = '▲';
+            }
+        }
+        
+        function calculateProfit() {
+            const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+            const prodCost = parseFloat(document.getElementById('prodCost').value) || 0;
+            const exportCost = parseFloat(document.getElementById('exportCost').value) || 0;
+            const containerSize = parseFloat(document.getElementById('containerSize').value) || 20;
+            
+            const profitPerMT = sellPrice - prodCost - exportCost;
+            const profitPerContainer = profitPerMT * containerSize;
+            const marginPercent = ((profitPerMT / sellPrice) * 100).toFixed(1);
+            
+            document.getElementById('profitResult').innerHTML = 
+                `Profit per Container: ${profitPerContainer.toLocaleString()} (${marginPercent}% margin)`;
+        }
+        
+        function copyToClipboard(element) {
+            const text = element.textContent.replace('📋 Copy Template', '').replace('📋 Copy WhatsApp Template', '').replace('📋 Copy Social Media Post', '').replace('📋 Copy Email Signature', '').trim();
+            navigator.clipboard.writeText(text).then(function() {
+                const btn = element.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                btn.style.background = 'linear-gradient(45deg, #2ecc71, #27ae60)';
+                
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.background = 'linear-gradient(45deg, #3498db, #2980b9)';
+                }, 2000);
+            });
+        }
+        
+        // Initialize calculator
+        calculateProfit();
+        
+        // Auto-open first section
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleSection('suppliers');
+        });
+    </script>
+</body>
+</html>
